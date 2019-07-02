@@ -14,8 +14,9 @@ On a client side, there is simple HTML page with JavaScript, that uses:
 * SignalR JS client for communication with server
 
 ## Winamp naming and styles
-I do own Winamp name and it is used only to honour classic Winamp application that was used for years and died because of online music.
+I do not own Winamp name and it is used only to honour classic Winamp application that was used for years and died because of online music.
 I do not own any of the styling images that are copies of original Winamp application.
+
 If any of image or naming is not appropriate or restricted by any of real authors, please contact me and I will remove those as soon as possible.
 
 ## How to use
