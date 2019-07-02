@@ -1,0 +1,27 @@
+﻿[
+  {
+    "Key": "phr",
+    "Title": "Power Hit Radio",
+    "Url": "http://power-stream.data.lt:8000/PHR"
+  },
+  {
+    "Key": "rc",
+    "Title": "Radiocentras",
+    "Url": "http://84.46.205.13:80/rc128.mp3"
+  },
+  {
+    "Key": "zip",
+    "Title": "ZIP FM",
+    "Url": "http://84.46.205.13:80/zipfm128.mp3"
+  },
+  {
+    "Key": "ehr",
+    "Title": "European hit radio",
+    "Url": "http://84.46.162.57:8000/ehr2"
+  },
+  {
+    "Key": "m1p",
+    "Title": "M-1 Plius",
+    "Url": "http://radio.m-1.fm/m1plius/mp3"
+  }
+]

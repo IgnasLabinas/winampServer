@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css?v=0.4">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <div class="main">
+        <div class="player">
+            <div class="timer">00:00</div><div class="current-title"></div><div class="buttons">
+                <span class="back disabled"></span>
+                <span class="play"></span>
+                <span class="pause"></span>
+                <span class="stop"></span>
+                <span class="next"></span>
+            </div>
+        </div>
+        <div class="playlist radio-playlist" style="display: none"></div>
+        <div class="playlist songs-playlist"></div>
+        <div class="videoSearch">
+            <div class="search">
+                <input type="text" id="searchText" placeholder="YouTube search">
+            </div>
+            <div id="response"></div>
+        </div>
+        <label><input type="radio" name="pmode" value="y" onchange="ChangeMode('y')" />Youtube</label>
+        <label><input type="radio" name="pmode" value="r" onchange="ChangeMode('r')" />Radio</label>
+        <div id="radiosLabel" style="display: none;">
+            <select id="radiosAfterYoutubeList" onchange="ChangeYouTubeEndMode()"></select>
+            <label><input id="playRadioAfterYoutube" type="checkbox" checked onchange="ChangeYouTubeEndMode()" /> Play selected radio after songs in playlist runs out</label>
+        </div>
+        <div class="console" onclick="$('.console .entry > input').focus()">
+            <div class="logs"></div>
+            <div class="entry">
+                <span>[server]: Console> </span>
+                <input type="text" onkeypress="SendCommand(event, this)" />
+            </div>
+        </div>
+    </div>
+
+    <!--Script references. -->
+    <script>
+        window.onClientLoad = function () {
+            gapi.client.load('youtube', 'v3', function () {
+                // This API key is intended for use only in this lesson.
+                // See https://goo.gl/PdPA1 to get a key for your own applications.
+                gapi.client.setApiKey('AIzaSyCR5In4DZaTP6IEZQ0r1JceuvluJRzQNLE');
+            });
+        };
+    </script>
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/jquery.signalR-2.2.1.min.js"></script>
+    <script src="signalr/hubs?v=0.4"></script>
+    <script src="js/plugins.js?v=0.4"></script>
+    <script src="js/main.js?v=0.4"></script>
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+</body>
+</html>
