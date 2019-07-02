@@ -26,8 +26,9 @@ namespace WinampServer.Handlers
             _mediaPlayer = null;
             try
             {
-                string vlcUrl = ConfigurationManager.AppSettings["VLCUrl"] ?? @"C:\Program Files (x86)\VideoLAN\VLC";
-                _mediaPlayer = new VlcMediaPlayer(new DirectoryInfo(vlcUrl));
+                
+                var libDirectory = new DirectoryInfo(Path.Combine(Environment.CurrentDirectory, "libvlc", IntPtr.Size == 4 ? "win-x86" : "win-x64"));
+                _mediaPlayer = new VlcMediaPlayer(libDirectory);
             }
             catch (Exception ex)
             {
@@ -54,7 +55,7 @@ namespace WinampServer.Handlers
         {
             get
             {
-                return _mediaPlayer.IsPlaying();
+                return _mediaPlayer != null ? _mediaPlayer.IsPlaying() : false;
             }
         }
 
